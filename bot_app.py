@@ -1,8 +1,3 @@
-### pip install pymorphy2 ###
-### pip install tensorflow ###
-
-
-
 import tensorflow as tf
 import numpy as np
 import pymorphy2
@@ -18,8 +13,6 @@ with open('dict_labels.json', 'rb') as fp:
 
 with open('word_index_.json', 'rb') as fp:
     word_index_ = pickle.load(fp)
-
-
 
 def norm_converter(sentence):
     """
@@ -44,14 +37,6 @@ def expand(x, filler, gl=15):
         x.extend([filler]*n)
     return np.asarray(x, dtype="int32")
 
-# def top3_4phrase(phrase, model, dict_labels=dict_labels):
-#   encoded_phrase = expand(encode(phrase), 0)
-#   predictions = model.predict(np.array(encoded_phrase)[None, :]).ravel()
-#   top_lbl_index = np.argsort(-predictions)[:3]
-#   print("ТОП-3 намерения для введённое фразы:")
-#   for index in top_lbl_index:
-#     print(dict_labels[index], ", вероятность: ", round(100*predictions[index], 4), "%", sep="")
-
 def top_indexes(phrase, model):
   encoded_phrase = expand(encode(phrase), 0)
   predictions = model.predict(np.array(encoded_phrase)[None, :]).ravel()
@@ -73,11 +58,5 @@ def score(phrase):
   for index in indexes:
     obj.append(round(100*predictions[index], 4))
   return obj
-  
-
-# if __name__ == "__main__":
-#   phrase = input("Введите фразу длиной до 14 слов:\n")
-#   top3_4phrase(phrase, model)
-#   k=input("Для выхода нажмите любую клавишу")
 
 eel.start('index.html', size=(1200, 800))
