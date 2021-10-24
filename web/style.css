@@ -64,6 +64,7 @@
 
 .answer {
     margin-top: 80px;
+    display: none;
 }
 
 .answer__title {
@@ -89,6 +90,8 @@ th:nth-child(2) {
 
 td {
     padding: 10px;
+    max-width: 200px;
+    word-wrap: break-word;
 }
 
 .footer {

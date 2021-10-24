@@ -7,15 +7,16 @@
     <title>Elma Bot</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="image/chatbot.png">
+    <script type="text/javascript" src="/eel.js"></script>
 </head>
 <body>
     <main class="main">
         <div class="main__content">
             <form class="form">
                 <input type="text" placeholder="Введите предложение" class="form__input">
-                <button class="form__button"></button>
+                <button type="button" class="form__button"></button>
             </form>
-            <p class="error">Предложение можно записать только на русском языке</p>
+            <p class="error"></p>
             <div class="answer">
                 <div class="answer__title">top-3 интента:</div>
                 <table>
@@ -25,20 +26,7 @@
                             <th>Score</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Класс 1</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Класс 1</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Класс 1</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -48,5 +36,6 @@
             <img src="image/github.png" alt="icon github">
         </a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
