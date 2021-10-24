@@ -80,4 +80,4 @@ def score(phrase):
 #   top3_4phrase(phrase, model)
 #   k=input("Для выхода нажмите любую клавишу")
 
-eel.start('index.html')
+eel.start('index.html', size=(1200, 800))

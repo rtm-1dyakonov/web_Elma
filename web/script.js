@@ -1,6 +1,9 @@
 
 const displayNone = 'none';
 const displayBlock = 'block';
+const displayFlex = 'flex';
+const opacity = '1';
+const opacityNull = '0';
 
 const countIntent = 3;
 
@@ -9,6 +12,8 @@ const button = document.querySelector('.form__button');
 const errorInput = document.querySelector('.error');
 const answer = document.querySelector('.answer');
 const bodyTable = document.querySelector('tbody');
+const loader = document.querySelector('.answer__loader');
+const table = document.querySelector('table');
 
 const checkValueInput = () => {
     const valueInput = input.value;
@@ -26,7 +31,15 @@ const checkValueInput = () => {
         errorInput.innerHTML = 'Предложение может состоять только из кириллицы, введите заново';
     } else {
         answer.style.display = displayBlock;
+        loader.style.display = displayFlex;
+        table.style.opacity = opacityNull;
+
         createBodyTablet(valueInput);
+
+        setTimeout(() => {
+            loader.style.display = displayNone;
+            table.style.opacity = opacity;
+        }, 3000);
     }
 }
 
